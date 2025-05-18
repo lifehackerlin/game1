@@ -79,6 +79,23 @@
 
     <!-- 游戏内容 -->
     <main class="container mx-auto px-4 py-12">
+        <!-- 游戏窗口 -->
+        <div class="mb-8">
+            <div class="game-container bg-gray-900 rounded-lg overflow-hidden" data-game-id="bit-heroes">
+                <iframe 
+                    src="https://wanted5games.com/games/html5/bit-heroes-new-en-s-iga-cloud/index.html?pub=10" 
+                    class="w-full aspect-video"
+                    frameborder="0"
+                    scrolling="no"
+                    allowfullscreen>
+                </iframe>
+                <div class="p-4 text-white text-center">
+                    <p class="text-sm">游戏加载中，请稍候...</p>
+                    <p class="text-xs mt-2">提示：点击游戏画面开始游戏</p>
+                </div>
+            </div>
+        </div>
+
         <div class="flex flex-col lg:flex-row gap-8">
             <!-- 游戏信息 -->
             <div class="lg:w-2/3">
@@ -128,33 +145,10 @@
                 <div class="mb-8">
                     <h2 class="text-xl font-bold mb-4">游戏截图</h2>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="img-placeholder rounded-lg w-full h-48 flex items-center justify-center">
-                            <span>游戏截图 1</span>
-                        </div>
-                        <div class="img-placeholder rounded-lg w-full h-48 flex items-center justify-center">
-                            <span>游戏截图 2</span>
-                        </div>
-                        <div class="img-placeholder rounded-lg w-full h-48 flex items-center justify-center">
-                            <span>游戏截图 3</span>
-                        </div>
-                        <div class="img-placeholder rounded-lg w-full h-48 flex items-center justify-center">
-                            <span>游戏截图 4</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 游戏窗口 -->
-                <div class="mb-8">
-                    <h2 class="text-xl font-bold mb-4">开始游戏</h2>
-                    <div class="game-container bg-gray-900 rounded-lg overflow-hidden" data-game-id="bit-heroes">
-                        <!-- 游戏将通过JavaScript自动加载 -->
-                        <div class="text-center py-16 text-white">
-                            <i class="fas fa-gamepad text-6xl mb-4"></i>
-                            <p class="text-xl">点击开始游戏</p>
-                            <button class="mt-6 bg-funion-primary hover:bg-funion-secondary text-white py-3 px-8 rounded-lg transition">
-                                <i class="fas fa-play mr-2"></i> 加载游戏
-                            </button>
-                        </div>
+                        <img src="/images/games/bit-heroes/gameplay1.jpg" alt="Bit Heroes战斗系统" class="rounded-lg w-full h-48 object-cover">
+                        <img src="/images/games/bit-heroes/gameplay2.jpg" alt="Bit Heroes角色升级" class="rounded-lg w-full h-48 object-cover">
+                        <img src="/images/games/bit-heroes/gameplay3.jpg" alt="Bit Heroes装备系统" class="rounded-lg w-full h-48 object-cover">
+                        <img src="/images/games/bit-heroes/gameplay4.jpg" alt="Bit Heroes多人副本" class="rounded-lg w-full h-48 object-cover">
                     </div>
                 </div>
             </div>
@@ -188,17 +182,10 @@
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
                     <h2 class="text-xl font-bold mb-4">分享游戏</h2>
                     <div class="flex space-x-4">
-                        <a href="#" class="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition">
-                            <i class="fab fa-pinterest"></i>
-                        </a>
-                        <a href="#" class="bg-green-500 text-white p-3 rounded-full hover:bg-green-600 transition">
-                            <i class="fab fa-whatsapp"></i>
+                        <a href="https://twitter.com/intent/tweet?text=来玩Bit Heroes吧！一个精彩的像素RPG游戏 - Funion Games&url=https://game1-nine-gamma.vercel.app/games/bit-heroes.html" 
+                           target="_blank" 
+                           class="bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
+                            <i class="fab fa-x-twitter"></i>
                         </a>
                     </div>
                 </div>
@@ -282,5 +269,6 @@
     </footer>
 
     <script src="/js/main.js"></script>
+    <script src="/js/screenshot.js"></script>
 </body>
 </html> 

@@ -1,32 +1,57 @@
 // 深色模式管理
 const DarkMode = {
     init() {
-        this.darkModeToggle = document.querySelector('button i.fa-moon');
+        // 查找暗色模式切换按钮
+        const darkModeToggle = document.querySelector('#darkModeToggle');
+        if (!darkModeToggle) return;
+
+        // 获取或创建图标
+        let icon = darkModeToggle.querySelector('i');
+        if (!icon) {
+            icon = document.createElement('i');
+            icon.className = 'fas fa-moon';
+            darkModeToggle.appendChild(icon);
+        }
+
+        // 保存引用
+        this.darkModeToggle = darkModeToggle;
+        this.icon = icon;
+
+        // 设置事件监听
         this.setupEventListeners();
+        
+        // 加载之前的偏好设置
         this.loadPreference();
     },
 
     setupEventListeners() {
+        if (!this.darkModeToggle) return;
         this.darkModeToggle.addEventListener('click', () => this.toggle());
     },
 
     toggle() {
+        if (!this.icon) return;
+        
         document.documentElement.classList.toggle('dark');
-        this.darkModeToggle.classList.toggle('fa-moon');
-        this.darkModeToggle.classList.toggle('fa-sun');
+        this.icon.classList.toggle('fa-moon');
+        this.icon.classList.toggle('fa-sun');
         this.savePreference();
     },
 
     loadPreference() {
-        if (localStorage.getItem('darkMode') === 'true') {
+        if (localStorage.getItem('darkMode') === 'enabled') {
             document.documentElement.classList.add('dark');
-            this.darkModeToggle.classList.remove('fa-moon');
-            this.darkModeToggle.classList.add('fa-sun');
+            if (this.icon) {
+                this.icon.classList.remove('fa-moon');
+                this.icon.classList.add('fa-sun');
+            }
         }
     },
 
     savePreference() {
-        localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        localStorage.setItem('darkMode', 
+            document.documentElement.classList.contains('dark') ? 'enabled' : 'disabled'
+        );
     }
 };
 
@@ -167,148 +192,86 @@ const FormValidation = {
     }
 };
 
+// 游戏加载管理
+const GameLoader = {
+    gameUrls: {
+        'epic-quest': '//game287709.konggames.com/gamez/0028/7709/live/index.html',
+        'bit-heroes': 'https://web.bitheroesgame.com/kongregatewebgl/',
+        'animation-throwdown': 'https://cb-cdn.synapse-games.com/webgl/Throwdown_WebGL_v1.157.1_r27681/index.html'
+    },
+
+    init() {
+        const gameContainers = document.querySelectorAll('.game-container');
+        if (gameContainers.length === 0) return;
+
+        gameContainers.forEach(container => {
+            const gameId = container.getAttribute('data-game-id');
+            const playButton = container.querySelector('button');
+            
+            if (!playButton || !gameId) return;
+            
+            playButton.addEventListener('click', () => this.loadGame(container, gameId));
+        });
+    },
+
+    loadGame(container, gameId) {
+        const gameUrl = this.gameUrls[gameId];
+        if (!gameUrl) {
+            console.error(`Game URL not found for ${gameId}`);
+            return;
+        }
+
+        // 移除按钮界面
+        const buttonInterface = container.querySelector('.text-center');
+        if (buttonInterface) {
+            container.removeChild(buttonInterface);
+        }
+
+        // 添加加载提示
+        const loadingElement = document.createElement('div');
+        loadingElement.className = 'text-center py-8';
+        loadingElement.innerHTML = `
+            <i class="fas fa-spinner fa-spin text-4xl text-funion-primary"></i>
+            <p class="mt-4">游戏加载中，请稍候...</p>
+        `;
+        container.appendChild(loadingElement);
+
+        // 创建游戏iframe
+        const iframe = document.createElement('iframe');
+        iframe.src = gameUrl;
+        iframe.width = '100%';
+        iframe.height = '640';
+        iframe.frameBorder = '0';
+        iframe.allowFullscreen = true;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+
+        // 加载完成后移除提示
+        iframe.onload = () => {
+            if (loadingElement.parentNode === container) {
+                container.removeChild(loadingElement);
+            }
+        };
+
+        // 加载失败处理
+        iframe.onerror = () => {
+            loadingElement.innerHTML = `
+                <i class="fas fa-exclamation-triangle text-4xl text-red-500"></i>
+                <p class="mt-4">游戏加载失败，请稍后再试</p>
+            `;
+        };
+
+        container.appendChild(iframe);
+    }
+};
+
 // 页面加载时初始化所有功能
 document.addEventListener('DOMContentLoaded', () => {
-    initDarkMode();
-    initSearch();
+    // 初始化深色模式
+    DarkMode.init();
     
-    // 初始化游戏按钮
-    initGameButtons();
-});
-
-// 初始化夜间模式
-function initDarkMode() {
-    const darkModeToggle = document.querySelector('button i.fas.fa-moon')?.parentElement || 
-                           document.querySelector('button i.fa-moon')?.parentElement ||
-                           document.querySelector('#darkModeToggle');
+    // 初始化搜索功能
+    Search.init();
     
-    if (!darkModeToggle) return;
-    
-    // 检查用户之前的夜间模式偏好
-    const darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
-    
-    // 如果之前启用了夜间模式，则应用它
-    if (darkModeEnabled) {
-        document.documentElement.classList.add('dark');
-        const icon = darkModeToggle.querySelector('i');
-        if (icon) {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
-    }
-    
-    // 夜间模式切换事件
-    darkModeToggle.addEventListener('click', function() {
-        const icon = this.querySelector('i');
-        if (document.documentElement.classList.contains('dark')) {
-            // 切换到亮色模式
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('darkMode', 'disabled');
-            if (icon) {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        } else {
-            // 切换到夜间模式
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('darkMode', 'enabled');
-            if (icon) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            }
-        }
-    });
-}
-
-// 初始化搜索功能
-function initSearch() {
-    const searchForm = document.querySelector('form[action="/search.html"]');
-    const searchInput = document.querySelector('input[name="q"]');
-    
-    if (!searchForm || !searchInput) return;
-    
-    // 搜索按钮点击事件
-    const searchButton = searchInput.closest('div').querySelector('button');
-    if (searchButton) {
-        searchButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            searchForm.submit();
-        });
-    }
-    
-    // 回车键搜索
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            searchForm.submit();
-        }
-    });
-}
-
-// 初始化游戏按钮点击事件
-function initGameButtons() {
-    const gameContainers = document.querySelectorAll('.game-container');
-    
-    if (gameContainers.length === 0) return;
-    
-    gameContainers.forEach(container => {
-        const gameId = container.getAttribute('data-game-id');
-        const playButton = container.querySelector('button');
-        
-        if (!playButton) return;
-        
-        playButton.addEventListener('click', function() {
-            // 移除按钮界面
-            const buttonInterface = container.querySelector('.text-center');
-            if (buttonInterface) {
-                container.removeChild(buttonInterface);
-            }
-            
-            // 根据游戏ID加载相应的iframe
-            let gameUrl = '';
-            
-            if (gameId === 'epic-quest') {
-                gameUrl = '//game287709.konggames.com/gamez/0028/7709/live/index.html?kongregate_game_version=1606746247&kongregate_host=www.kongregate.com';
-            } else if (gameId === 'bit-heroes') {
-                gameUrl = 'https://web.bitheroesgame.com/kongregatewebgl/';
-            } else if (gameId === 'animation-throwdown') {
-                gameUrl = 'https://cb-cdn.synapse-games.com/webgl/Throwdown_WebGL_v1.157.1_r27681/index.html';
-            }
-            
-            loadGameIframe(container, gameUrl);
-        });
-    });
-}
-
-// 加载游戏iframe的函数
-function loadGameIframe(container, src) {
-    // 添加加载中提示
-    const loadingElement = document.createElement('div');
-    loadingElement.className = 'text-center py-8';
-    loadingElement.innerHTML = '<i class="fas fa-spinner fa-spin text-4xl text-funion-primary"></i><p class="mt-4">游戏加载中，请稍候...</p>';
-    
-    container.appendChild(loadingElement);
-    
-    // 创建游戏iframe
-    const iframe = document.createElement('iframe');
-    iframe.src = src;
-    iframe.width = '100%';
-    iframe.height = '640';
-    iframe.frameBorder = '0';
-    iframe.allowFullscreen = true;
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    
-    // 加载完成后移除提示
-    iframe.onload = function() {
-        if (loadingElement.parentNode === container) {
-            container.removeChild(loadingElement);
-        }
-    };
-    
-    // 加载失败处理
-    iframe.onerror = function() {
-        loadingElement.innerHTML = '<i class="fas fa-exclamation-triangle text-4xl text-red-500"></i><p class="mt-4">游戏加载失败，请稍后再试</p>';
-    };
-    
-    container.appendChild(iframe);
-} 
+    // 初始化游戏加载器
+    GameLoader.init();
+}); 

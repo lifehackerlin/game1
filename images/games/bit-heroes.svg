@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="400" fill="#6366F1"/>
+    <text x="400" y="180" font-family="Arial" font-size="32" fill="#ffffff" text-anchor="middle">Bit Heroes</text>
+    <text x="400" y="220" font-family="Arial" font-size="24" fill="#ffffff" text-anchor="middle">像素RPG游戏</text>
+</svg> 
