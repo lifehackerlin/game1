@@ -174,4 +174,129 @@ document.addEventListener('DOMContentLoaded', () => {
     CategoryFilter.init();
     LazyLoad.init();
     FormValidation.init();
-}); 
+});
+
+// 夜间模式切换功能
+document.addEventListener('DOMContentLoaded', function() {
+    // 检查用户之前的夜间模式偏好
+    const darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
+    
+    // 获取夜间模式按钮
+    const darkModeToggle = document.querySelector('button i.fas.fa-moon').parentElement;
+    
+    // 如果之前启用了夜间模式，则应用它
+    if (darkModeEnabled) {
+        document.documentElement.classList.add('dark');
+        darkModeToggle.querySelector('i').classList.remove('fa-moon');
+        darkModeToggle.querySelector('i').classList.add('fa-sun');
+    }
+    
+    // 夜间模式切换事件
+    darkModeToggle.addEventListener('click', function() {
+        if (document.documentElement.classList.contains('dark')) {
+            // 切换到亮色模式
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('darkMode', 'disabled');
+            this.querySelector('i').classList.remove('fa-sun');
+            this.querySelector('i').classList.add('fa-moon');
+        } else {
+            // 切换到夜间模式
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('darkMode', 'enabled');
+            this.querySelector('i').classList.remove('fa-moon');
+            this.querySelector('i').classList.add('fa-sun');
+        }
+    });
+    
+    // 搜索功能
+    const searchForm = document.querySelector('header .relative').closest('form') || document.createElement('form');
+    const searchInput = document.querySelector('header .relative input');
+    
+    // 如果搜索框不在表单中，则添加表单
+    if (!searchForm.tagName || searchForm.tagName !== 'FORM') {
+        const searchContainer = document.querySelector('header .relative');
+        const newForm = document.createElement('form');
+        newForm.action = '/search.html';
+        newForm.method = 'get';
+        
+        const parentElement = searchContainer.parentElement;
+        parentElement.insertBefore(newForm, searchContainer);
+        newForm.appendChild(searchContainer);
+        
+        searchForm = newForm;
+    }
+    
+    // 确保表单有正确的属性
+    searchForm.action = '/search.html';
+    searchForm.method = 'get';
+    
+    // 确保搜索输入框有正确的属性
+    if (searchInput) {
+        searchInput.name = 'q';
+        
+        // 搜索按钮点击事件
+        const searchButton = searchInput.nextElementSibling;
+        if (searchButton) {
+            searchButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                searchForm.submit();
+            });
+        }
+    }
+});
+
+// 游戏按钮点击事件
+document.addEventListener('DOMContentLoaded', function() {
+    const gameContainers = document.querySelectorAll('.game-container');
+    
+    if (gameContainers.length > 0) {
+        gameContainers.forEach(container => {
+            const gameId = container.getAttribute('data-game-id');
+            const playButton = container.querySelector('button');
+            
+            if (playButton) {
+                playButton.addEventListener('click', function() {
+                    // 移除按钮界面
+                    const buttonInterface = container.querySelector('.text-center');
+                    if (buttonInterface) {
+                        container.removeChild(buttonInterface);
+                    }
+                    
+                    // 根据游戏ID加载相应的iframe
+                    if (gameId === 'epic-quest') {
+                        loadGameIframe(container, '//game287709.konggames.com/gamez/0028/7709/live/index.html?kongregate_game_version=1606746247&kongregate_host=www.kongregate.com');
+                    } else if (gameId === 'bit-heroes') {
+                        loadGameIframe(container, 'https://web.bitheroesgame.com/kongregatewebgl/');
+                    } else if (gameId === 'animation-throwdown') {
+                        loadGameIframe(container, 'https://cb-cdn.synapse-games.com/webgl/Throwdown_WebGL_v1.157.1_r27681/index.html');
+                    }
+                });
+            }
+        });
+    }
+});
+
+// 加载游戏iframe的函数
+function loadGameIframe(container, src) {
+    const iframe = document.createElement('iframe');
+    iframe.src = src;
+    iframe.width = '100%';
+    iframe.height = '640';
+    iframe.frameBorder = '0';
+    iframe.allowFullscreen = true;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    
+    // 添加加载中提示
+    const loadingElement = document.createElement('div');
+    loadingElement.className = 'text-center py-8';
+    loadingElement.innerHTML = '<i class="fas fa-spinner fa-spin text-4xl text-funion-primary"></i><p class="mt-4">游戏加载中，请稍候...</p>';
+    
+    container.appendChild(loadingElement);
+    
+    // 加载完成后移除提示
+    iframe.onload = function() {
+        container.removeChild(loadingElement);
+    };
+    
+    container.appendChild(iframe);
+} 

@@ -56,14 +56,16 @@
                     </nav>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <input type="text" placeholder="Search games..." 
-                               class="bg-white/10 rounded-full py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-funion-accent">
-                        <button class="absolute right-3 top-2.5">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                    <button class="p-2 hover:bg-funion-secondary rounded-full">
+                    <form action="/search.html" method="get">
+                        <div class="relative">
+                            <input type="text" name="q" placeholder="搜索游戏..." 
+                                   class="bg-white/10 rounded-full py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-funion-accent">
+                            <button type="submit" class="absolute right-3 top-2.5">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <button id="darkModeToggle" class="p-2 hover:bg-funion-secondary rounded-full">
                         <i class="fas fa-moon"></i>
                     </button>
                 </div>
@@ -88,51 +90,52 @@
     </section>
 
     <!-- Featured Games -->
-    <section id="featured" class="py-12">
+    <section id="featured" class="py-12 bg-white dark:bg-gray-800">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8">Featured Games</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Epic Quest Adventures -->
-                <div class="bg-white dark:bg-funion-dark rounded-lg shadow-lg overflow-hidden">
-                    <img src="/images/epic-quest.jpg" alt="Epic Quest Adventures" class="w-full h-48 object-cover">
+            <h2 class="text-3xl font-bold mb-8 text-center">特色游戏</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Epic Quest -->
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                    <img src="/images/games/epic-quest.jpg" alt="Epic Quest" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Epic Quest Adventures</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">Embark on an extraordinary journey through mystical realms and challenging puzzles.</p>
+                        <h3 class="text-xl font-bold mb-2">Epic Quest</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">展开一场史诗般的冒险，成为传奇英雄。</p>
                         <div class="flex justify-between items-center">
-                            <div class="flex items-center">
-                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Adventure</span>
-                            </div>
-                            <a href="/games/epic-quest.html" class="bg-funion-primary text-white px-4 py-2 rounded-full hover:bg-funion-secondary">Play Now</a>
+                            <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-100 px-3 py-1 rounded-full text-xs">冒险</span>
+                            <a href="/games/epic-quest.html" class="bg-funion-primary text-white px-4 py-2 rounded-lg hover:bg-funion-secondary transition">
+                                开始游戏
+                            </a>
                         </div>
                     </div>
                 </div>
-
+                
                 <!-- Bit Heroes -->
-                <div class="bg-white dark:bg-funion-dark rounded-lg shadow-lg overflow-hidden">
-                    <img src="/images/bit-heroes.jpg" alt="Bit Heroes" class="w-full h-48 object-cover">
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                    <img src="/images/games/bit-heroes.jpg" alt="Bit Heroes" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Bit Heroes</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">Experience an epic retro-style RPG adventure with modern multiplayer features.</p>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">像素风格的RPG游戏，打造你的英雄传说。</p>
                         <div class="flex justify-between items-center">
-                            <div class="flex items-center">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">RPG</span>
-                            </div>
-                            <a href="/games/bit-heroes.html" class="bg-funion-primary text-white px-4 py-2 rounded-full hover:bg-funion-secondary">Play Now</a>
+                            <span class="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-100 px-3 py-1 rounded-full text-xs">RPG</span>
+                            <a href="/games/bit-heroes.html" class="bg-funion-primary text-white px-4 py-2 rounded-lg hover:bg-funion-secondary transition">
+                                开始游戏
+                            </a>
                         </div>
                     </div>
                 </div>
-
+                
                 <!-- Animation Throwdown -->
-                <div class="bg-white dark:bg-funion-dark rounded-lg shadow-lg overflow-hidden">
-                    <img src="/images/animation-throwdown.jpg" alt="Animation Throwdown" class="w-full h-48 object-cover">
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                    <img src="/images/games/animation-throwdown.jpg" alt="Animation Throwdown" class="w-full h-56 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Animation Throwdown</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">Battle with your favorite animated characters in this strategic card game.</p>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">与你喜爱的动画角色一起，体验策略卡牌对战。</p>
                         <div class="flex justify-between items-center">
-                            <div class="flex items-center">
-                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Strategy</span>
-                            </div>
-                            <a href="/games/animation-throwdown.html" class="bg-funion-primary text-white px-4 py-2 rounded-full hover:bg-funion-secondary">Play Now</a>
+                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-100 px-3 py-1 rounded-full text-xs">策略</span>
+                            <a href="/games/animation-throwdown.html" class="bg-funion-primary text-white px-4 py-2 rounded-lg hover:bg-funion-secondary transition">
+                                开始游戏
+                            </a>
                         </div>
                     </div>
                 </div>

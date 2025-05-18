@@ -54,114 +54,147 @@
     </header>
 
     <!-- 游戏内容 -->
-    <main class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- 游戏区域 -->
-            <div class="lg:col-span-2">
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 mb-8">
-                    <h1 class="text-3xl font-bold mb-4">Bit Heroes</h1>
-                    <div class="aspect-w-16 aspect-h-9 mb-4">
-                        <iframe src="https://example.com/bit-heroes" class="w-full h-[600px] rounded-lg" allowfullscreen></iframe>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-3 py-1 rounded-full text-sm">RPG</span>
-                            <span class="text-gray-600 dark:text-gray-400"><i class="fas fa-users mr-2"></i>2000+ playing</span>
-                        </div>
-                        <div class="flex space-x-4">
-                            <button class="text-gray-600 dark:text-gray-400 hover:text-funion-primary">
-                                <i class="fas fa-share-alt mr-1"></i> Share
-                            </button>
-                            <button class="text-gray-600 dark:text-gray-400 hover:text-red-500">
-                                <i class="fas fa-heart mr-1"></i> Favorite
-                            </button>
-                        </div>
-                    </div>
+    <main class="container mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- 游戏信息 -->
+            <div class="lg:w-2/3">
+                <h1 class="text-3xl font-bold mb-4">Bit Heroes</h1>
+                
+                <!-- 游戏标签 -->
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-100 px-3 py-1 rounded-full text-sm">RPG</span>
+                    <span class="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-100 px-3 py-1 rounded-full text-sm">像素</span>
+                    <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-3 py-1 rounded-full text-sm">多人</span>
                 </div>
-
-                <!-- 游戏说明 -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
-                    <h2 class="text-2xl font-bold mb-4">游戏介绍</h2>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">
-                        Bit Heroes 是一款结合了复古像素风格和现代多人游戏特色的RPG游戏。在这个充满挑战的世界中，你将收集装备、培养英雄、组建团队，与其他玩家一起探索地下城、征服PVP竞技场。
+                
+                <!-- 游戏评分 -->
+                <div class="flex items-center mb-6">
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <span class="ml-2 text-gray-600 dark:text-gray-400">4.2 (800+ 评价)</span>
+                </div>
+                
+                <!-- 游戏描述 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+                    <h2 class="text-xl font-bold mb-4">游戏介绍</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        《Bit Heroes》是一款充满怀旧像素风格的RPG游戏，融合了现代多人游戏元素，让玩家可以与朋友一起冒险。
                     </p>
-                    <h3 class="text-xl font-bold mb-2">游戏特色</h3>
-                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 mb-4">
-                        <li>经典的像素复古风格</li>
-                        <li>丰富的装备收集系统</li>
-                        <li>多样化的英雄培养方式</li>
-                        <li>刺激的PVP竞技场</li>
-                        <li>合作探索地下城</li>
-                        <li>公会系统和社交功能</li>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        游戏特色：
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+                        <li>经典的复古像素艺术风格</li>
+                        <li>深度角色定制和技能树系统</li>
+                        <li>多人副本和PVP竞技场</li>
+                        <li>收集数百种宠物和装备</li>
+                        <li>公会系统和社交玩法</li>
                     </ul>
-                    <h3 class="text-xl font-bold mb-2">操作说明</h3>
-                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
-                        <li>点击移动和攻击</li>
-                        <li>自动战斗系统</li>
-                        <li>装备拖拽管理</li>
-                        <li>技能快捷键 1-5</li>
-                    </ul>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        打造你自己的英雄，探索这个像素世界的每一个角落，与朋友并肩作战，成为真正的传奇！
+                    </p>
                 </div>
-
-                <!-- 游戏攻略 -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-                    <h2 class="text-2xl font-bold mb-4">游戏攻略</h2>
-                    <div class="space-y-4">
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">新手指南</h3>
-                            <p class="text-gray-600 dark:text-gray-400">
-                                1. 优先完成主线任务，获取基础装备和经验。<br>
-                                2. 加入公会，获得额外奖励和帮助。<br>
-                                3. 合理使用自动战斗功能，提高效率。<br>
-                                4. 参与每日任务和活动，获取稀有资源。
-                            </p>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">进阶技巧</h3>
-                            <p class="text-gray-600 dark:text-gray-400">
-                                1. 合理搭配队伍，注意角色相性。<br>
-                                2. PVP中要注意装备和技能的时机。<br>
-                                3. 优先培养主力英雄，合理分配资源。<br>
-                                4. 参与公会战，获取稀有装备。
-                            </p>
+                
+                <!-- 游戏截图 -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-4">游戏截图</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="/images/screenshots/bit-heroes-1.jpg" class="block">
+                            <img src="/images/screenshots/bit-heroes-1.jpg" alt="Bit Heroes Screenshot 1" class="rounded-lg w-full h-48 object-cover">
+                        </a>
+                        <a href="/images/screenshots/bit-heroes-2.jpg" class="block">
+                            <img src="/images/screenshots/bit-heroes-2.jpg" alt="Bit Heroes Screenshot 2" class="rounded-lg w-full h-48 object-cover">
+                        </a>
+                        <a href="/images/screenshots/bit-heroes-3.jpg" class="block">
+                            <img src="/images/screenshots/bit-heroes-3.jpg" alt="Bit Heroes Screenshot 3" class="rounded-lg w-full h-48 object-cover">
+                        </a>
+                        <a href="/images/screenshots/bit-heroes-4.jpg" class="block">
+                            <img src="/images/screenshots/bit-heroes-4.jpg" alt="Bit Heroes Screenshot 4" class="rounded-lg w-full h-48 object-cover">
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 游戏窗口 -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-4">开始游戏</h2>
+                    <div class="game-container bg-gray-900 rounded-lg overflow-hidden" data-game-id="bit-heroes">
+                        <!-- 游戏将通过JavaScript自动加载 -->
+                        <div class="text-center py-16 text-white">
+                            <i class="fas fa-gamepad text-6xl mb-4"></i>
+                            <p class="text-xl">点击开始游戏</p>
+                            <button class="mt-6 bg-funion-primary hover:bg-funion-secondary text-white py-3 px-8 rounded-lg transition">
+                                <i class="fas fa-play mr-2"></i> 加载游戏
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-
+            
             <!-- 侧边栏 -->
-            <div class="lg:col-span-1">
-                <!-- 游戏截图 -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
-                    <h2 class="text-2xl font-bold mb-4">游戏截图</h2>
-                    <div class="grid grid-cols-2 gap-4">
-                        <img src="/images/bit-heroes-1.jpg" alt="游戏截图1" class="rounded-lg">
-                        <img src="/images/bit-heroes-2.jpg" alt="游戏截图2" class="rounded-lg">
-                        <img src="/images/bit-heroes-3.jpg" alt="游戏截图3" class="rounded-lg">
-                        <img src="/images/bit-heroes-4.jpg" alt="游戏截图4" class="rounded-lg">
+            <div class="lg:w-1/3">
+                <!-- 游戏信息卡 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+                    <h2 class="text-xl font-bold mb-4">游戏信息</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-gray-600 dark:text-gray-400">开发商：</span>
+                            <span class="font-medium">Kongregate</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-600 dark:text-gray-400">发布日期：</span>
+                            <span class="font-medium">2022年8月25日</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-600 dark:text-gray-400">平台：</span>
+                            <span class="font-medium">Web, Mobile</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-600 dark:text-gray-400">类型：</span>
+                            <span class="font-medium">RPG, 像素, 多人</span>
+                        </div>
                     </div>
                 </div>
-
+                
+                <!-- 分享 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+                    <h2 class="text-xl font-bold mb-4">分享游戏</h2>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="#" class="bg-green-500 text-white p-3 rounded-full hover:bg-green-600 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
                 <!-- 相关游戏 -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-                    <h2 class="text-2xl font-bold mb-4">相关游戏</h2>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-bold mb-4">相关游戏</h2>
                     <div class="space-y-4">
-                        <a href="/games/epic-quest.html" class="block hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <img src="/images/epic-quest.jpg" alt="Epic Quest Adventures" class="w-20 h-20 rounded-lg">
-                                <div class="ml-4">
-                                    <h3 class="font-bold">Epic Quest Adventures</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">魔幻冒险游戏</p>
-                                </div>
+                        <a href="/games/epic-quest.html" class="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                            <img src="/images/games/epic-quest-thumb.jpg" alt="Epic Quest" class="w-16 h-16 rounded-lg object-cover">
+                            <div class="ml-4">
+                                <h3 class="font-medium">Epic Quest</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">史诗冒险游戏</p>
                             </div>
                         </a>
-                        <a href="/games/animation-throwdown.html" class="block hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg p-4">
-                            <div class="flex items-center">
-                                <img src="/images/animation-throwdown.jpg" alt="Animation Throwdown" class="w-20 h-20 rounded-lg">
-                                <div class="ml-4">
-                                    <h3 class="font-bold">Animation Throwdown</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">策略卡牌游戏</p>
-                                </div>
+                        <a href="/games/animation-throwdown.html" class="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                            <img src="/images/games/animation-throwdown-thumb.jpg" alt="Animation Throwdown" class="w-16 h-16 rounded-lg object-cover">
+                            <div class="ml-4">
+                                <h3 class="font-medium">Animation Throwdown</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">策略卡牌游戏</p>
                             </div>
                         </a>
                     </div>
