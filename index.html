@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark:bg-funion-dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,9 +34,25 @@
                         }
                     }
                 }
-            }
+            },
+            darkMode: 'class'
         }
     </script>
+    <style>
+        /* 默认图片样式 */
+        .img-placeholder {
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+        .dark .img-placeholder {
+            background-color: #374151;
+            color: #d1d5db;
+        }
+    </style>
 </head>
 <body class="bg-funion-light dark:bg-funion-dark text-gray-800 dark:text-white min-h-screen">
     <!-- Header -->
@@ -76,14 +92,14 @@
     <!-- Hero Section -->
     <section class="bg-gradient-to-r from-funion-primary to-funion-secondary text-white py-16">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Funion Games</h1>
-            <p class="text-xl md:text-2xl mb-8">Your Ultimate Gaming Destination</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">欢迎来到 Funion Games</h1>
+            <p class="text-xl md:text-2xl mb-8">您的游戏娱乐终极目的地</p>
             <div class="flex justify-center space-x-4">
                 <a href="#featured" class="bg-white text-funion-primary px-6 py-3 rounded-full font-bold hover:bg-funion-accent hover:text-white transition">
-                    Play Now
+                    开始游戏
                 </a>
                 <a href="#categories" class="border-2 border-white px-6 py-3 rounded-full font-bold hover:bg-white hover:text-funion-primary transition">
-                    Browse Games
+                    浏览游戏
                 </a>
             </div>
         </div>
@@ -97,7 +113,10 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Epic Quest -->
                 <div class="bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
-                    <img src="/images/games/epic-quest.jpg" alt="Epic Quest" class="w-full h-56 object-cover">
+                    <div class="img-placeholder w-full h-56 flex items-center justify-center">
+                        <i class="fas fa-gamepad text-3xl"></i>
+                        <span class="ml-2">Epic Quest</span>
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Epic Quest</h3>
                         <p class="text-gray-600 dark:text-gray-400 mb-4">展开一场史诗般的冒险，成为传奇英雄。</p>
@@ -112,7 +131,10 @@
                 
                 <!-- Bit Heroes -->
                 <div class="bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
-                    <img src="/images/games/bit-heroes.jpg" alt="Bit Heroes" class="w-full h-56 object-cover">
+                    <div class="img-placeholder w-full h-56 flex items-center justify-center">
+                        <i class="fas fa-gamepad text-3xl"></i>
+                        <span class="ml-2">Bit Heroes</span>
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Bit Heroes</h3>
                         <p class="text-gray-600 dark:text-gray-400 mb-4">像素风格的RPG游戏，打造你的英雄传说。</p>
@@ -127,7 +149,10 @@
                 
                 <!-- Animation Throwdown -->
                 <div class="bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
-                    <img src="/images/games/animation-throwdown.jpg" alt="Animation Throwdown" class="w-full h-56 object-cover">
+                    <div class="img-placeholder w-full h-56 flex items-center justify-center">
+                        <i class="fas fa-gamepad text-3xl"></i>
+                        <span class="ml-2">Animation Throwdown</span>
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Animation Throwdown</h3>
                         <p class="text-gray-600 dark:text-gray-400 mb-4">与你喜爱的动画角色一起，体验策略卡牌对战。</p>
@@ -146,27 +171,27 @@
     <!-- Categories -->
     <section id="categories" class="py-12 bg-gray-50 dark:bg-gray-900">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8">Game Categories</h2>
+            <h2 class="text-3xl font-bold mb-8">游戏分类</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <a href="/games/action.html" class="bg-white dark:bg-funion-dark p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition">
                     <i class="fas fa-fist-raised text-4xl text-funion-primary mb-4"></i>
-                    <h3 class="font-bold">Action</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">Fast-paced excitement</p>
+                    <h3 class="font-bold">动作</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">快节奏刺激</p>
                 </a>
                 <a href="/games/adventure.html" class="bg-white dark:bg-funion-dark p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition">
                     <i class="fas fa-map-marked-alt text-4xl text-funion-primary mb-4"></i>
-                    <h3 class="font-bold">Adventure</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">Epic journeys await</p>
+                    <h3 class="font-bold">冒险</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">史诗般的旅程</p>
                 </a>
                 <a href="/games/rpg.html" class="bg-white dark:bg-funion-dark p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition">
                     <i class="fas fa-hat-wizard text-4xl text-funion-primary mb-4"></i>
-                    <h3 class="font-bold">RPG</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">Become a hero</p>
+                    <h3 class="font-bold">角色扮演</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">成为真正的英雄</p>
                 </a>
                 <a href="/games/strategy.html" class="bg-white dark:bg-funion-dark p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition">
                     <i class="fas fa-chess text-4xl text-funion-primary mb-4"></i>
-                    <h3 class="font-bold">Strategy</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">Plan your victory</p>
+                    <h3 class="font-bold">策略</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">规划你的胜利</p>
                 </a>
             </div>
         </div>
@@ -175,12 +200,12 @@
     <!-- Newsletter -->
     <section class="py-12 bg-funion-primary text-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
-            <p class="mb-8">Subscribe to our newsletter for new game alerts and gaming tips!</p>
+            <h2 class="text-3xl font-bold mb-4">保持更新</h2>
+            <p class="mb-8">订阅我们的通讯，获取新游戏提醒和游戏技巧！</p>
             <form class="max-w-md mx-auto flex gap-4">
-                <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-full text-gray-800">
+                <input type="email" placeholder="输入您的邮箱" class="flex-1 px-4 py-2 rounded-full text-gray-800">
                 <button type="submit" class="bg-white text-funion-primary px-6 py-2 rounded-full font-bold hover:bg-funion-accent hover:text-white">
-                    Subscribe
+                    订阅
                 </button>
             </form>
         </div>
@@ -192,28 +217,28 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Funion Games</h3>
-                    <p class="text-gray-400">Your ultimate destination for free online gaming entertainment.</p>
+                    <p class="text-gray-400">您的在线游戏娱乐终极目的地。</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <h3 class="text-xl font-bold mb-4">快速链接</h3>
                     <ul class="space-y-2">
-                        <li><a href="/about.html" class="text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="/contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
-                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
-                        <li><a href="/terms.html" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white">关于我们</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-white">联系我们</a></li>
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white">隐私政策</a></li>
+                        <li><a href="/terms.html" class="text-gray-400 hover:text-white">服务条款</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Categories</h3>
+                    <h3 class="text-xl font-bold mb-4">游戏分类</h3>
                     <ul class="space-y-2">
-                        <li><a href="/games/action.html" class="text-gray-400 hover:text-white">Action Games</a></li>
-                        <li><a href="/games/adventure.html" class="text-gray-400 hover:text-white">Adventure Games</a></li>
-                        <li><a href="/games/rpg.html" class="text-gray-400 hover:text-white">RPG Games</a></li>
-                        <li><a href="/games/strategy.html" class="text-gray-400 hover:text-white">Strategy Games</a></li>
+                        <li><a href="/games/action.html" class="text-gray-400 hover:text-white">动作游戏</a></li>
+                        <li><a href="/games/adventure.html" class="text-gray-400 hover:text-white">冒险游戏</a></li>
+                        <li><a href="/games/rpg.html" class="text-gray-400 hover:text-white">角色扮演</a></li>
+                        <li><a href="/games/strategy.html" class="text-gray-400 hover:text-white">策略游戏</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <h3 class="text-xl font-bold mb-4">关注我们</h3>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-white text-2xl">
                             <i class="fab fa-facebook"></i>
@@ -236,23 +261,6 @@
         </div>
     </footer>
 
-    <script>
-        // Dark mode toggle
-        const darkModeToggle = document.querySelector('button i.fa-moon');
-        darkModeToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            darkModeToggle.classList.toggle('fa-moon');
-            darkModeToggle.classList.toggle('fa-sun');
-        });
-
-        // Search functionality
-        const searchInput = document.querySelector('input[type="text"]');
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const searchTerm = searchInput.value.toLowerCase();
-                window.location.href = `/search.html?q=${encodeURIComponent(searchTerm)}`;
-            }
-        });
-    </script>
+    <script src="/js/main.js"></script>
 </body>
 </html> 

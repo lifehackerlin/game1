@@ -1,0 +1,16 @@
+这是一个占位文件，请创建实际的图片文件：
+
+1. 需要添加的图片：
+- epic-quest.jpg
+- bit-heroes.jpg
+- animation-throwdown.jpg
+- epic-quest-thumb.jpg
+- bit-heroes-thumb.jpg
+- animation-throwdown-thumb.jpg
+
+2. 在screenshots目录下需要添加：
+- epic-quest-1.jpg 到 epic-quest-4.jpg
+- bit-heroes-1.jpg 到 bit-heroes-4.jpg
+- animation-throwdown-1.jpg 到 animation-throwdown-4.jpg
+
+如果没有这些图片，网站将无法正常显示图片内容。 

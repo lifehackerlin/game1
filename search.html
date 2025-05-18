@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark:bg-funion-dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>搜索结果 | Funion Games</title>
-    <meta name="description" content="在 Funion Games 中搜索您喜爱的游戏。" />
-    <meta name="keywords" content="Funion Games, 游戏搜索, 在线游戏" />
+    <meta name="description" content="搜索Funion Games上的免费在线游戏 - 动作、冒险、RPG等多种类型游戏尽在此处！" />
+    <meta name="robots" content="noindex, follow" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
     <script>
         tailwind.config = {
             theme: {
@@ -27,6 +26,21 @@
             darkMode: 'class'
         }
     </script>
+    <style>
+        /* 默认图片样式 */
+        .img-placeholder {
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+        .dark .img-placeholder {
+            background-color: #374151;
+            color: #d1d5db;
+        }
+    </style>
 </head>
 <body class="bg-funion-light dark:bg-funion-dark text-gray-800 dark:text-white min-h-screen">
     <!-- Header -->
@@ -46,14 +60,16 @@
                     </nav>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <input type="text" placeholder="搜索游戏..." 
-                               class="bg-white/10 rounded-full py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-funion-accent">
-                        <button class="absolute right-3 top-2.5">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                    <button class="p-2 hover:bg-funion-secondary rounded-full">
+                    <form action="/search.html" method="get">
+                        <div class="relative">
+                            <input type="text" name="q" id="searchInput" placeholder="搜索游戏..." 
+                                   class="bg-white/10 rounded-full py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-funion-accent">
+                            <button type="submit" class="absolute right-3 top-2.5">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <button id="darkModeToggle" class="p-2 hover:bg-funion-secondary rounded-full">
                         <i class="fas fa-moon"></i>
                     </button>
                 </div>
@@ -61,149 +77,28 @@
         </div>
     </header>
 
-    <!-- 主要内容 -->
+    <!-- 搜索结果 -->
     <main class="container mx-auto px-4 py-12">
-        <!-- 搜索区域 -->
-        <section class="mb-12">
-            <div class="max-w-3xl mx-auto">
-                <form class="flex gap-4">
-                    <div class="flex-1">
-                        <input type="text" id="search" name="q" placeholder="输入游戏名称、类型或关键词..."
-                               class="w-full px-6 py-4 text-lg rounded-lg border focus:ring-2 focus:ring-funion-accent dark:bg-gray-800 dark:border-gray-700">
-                    </div>
-                    <button type="submit" class="px-8 py-4 bg-funion-primary text-white rounded-lg hover:bg-funion-secondary transition">
-                        <i class="fas fa-search mr-2"></i>
-                        搜索
-                    </button>
-                </form>
-            </div>
-        </section>
-
-        <!-- 筛选器 -->
-        <section class="mb-8">
-            <div class="flex flex-wrap gap-4">
-                <div class="flex items-center space-x-2">
-                    <label class="text-sm font-medium">游戏类型：</label>
-                    <select class="form-select rounded-lg border px-4 py-2 dark:bg-gray-800 dark:border-gray-700">
-                        <option value="">全部</option>
-                        <option value="action">动作</option>
-                        <option value="adventure">冒险</option>
-                        <option value="rpg">角色扮演</option>
-                        <option value="strategy">策略</option>
-                    </select>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <label class="text-sm font-medium">排序方式：</label>
-                    <select class="form-select rounded-lg border px-4 py-2 dark:bg-gray-800 dark:border-gray-700">
-                        <option value="relevance">相关度</option>
-                        <option value="newest">最新</option>
-                        <option value="popular">最受欢迎</option>
-                        <option value="rating">评分</option>
-                    </select>
-                </div>
-            </div>
-        </section>
-
-        <!-- 搜索结果 -->
-        <section>
-            <h2 class="text-2xl font-bold mb-6">搜索结果</h2>
-            
-            <!-- 结果统计 -->
-            <p class="text-gray-600 dark:text-gray-400 mb-8">
-                找到 <span class="font-bold text-funion-primary">3</span> 个相关结果
-            </p>
-
-            <!-- 结果列表 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Animation Throwdown -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition">
-                    <img src="/images/animation-throwdown.jpg" alt="Animation Throwdown" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-lg font-bold">Animation Throwdown</h3>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">4.5 ★</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                            与你喜爱的动画角色一起，体验策略卡牌对战。
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <div class="space-x-2">
-                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-100 px-2 py-1 rounded text-xs">策略</span>
-                                <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-2 py-1 rounded text-xs">卡牌</span>
-                            </div>
-                            <a href="/games/animation-throwdown.html" class="text-funion-primary hover:text-funion-secondary">
-                                查看详情 <i class="fas fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Epic Quest -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition">
-                    <img src="/images/epic-quest.jpg" alt="Epic Quest" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-lg font-bold">Epic Quest</h3>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">4.8 ★</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                            展开一场史诗般的冒险，成为传奇英雄。
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <div class="space-x-2">
-                                <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-100 px-2 py-1 rounded text-xs">冒险</span>
-                                <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100 px-2 py-1 rounded text-xs">动作</span>
-                            </div>
-                            <a href="/games/epic-quest.html" class="text-funion-primary hover:text-funion-secondary">
-                                查看详情 <i class="fas fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bit Heroes -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition">
-                    <img src="/images/bit-heroes.jpg" alt="Bit Heroes" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-lg font-bold">Bit Heroes</h3>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">4.2 ★</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                            像素风格的RPG游戏，打造你的英雄传说。
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <div class="space-x-2">
-                                <span class="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-100 px-2 py-1 rounded text-xs">RPG</span>
-                                <span class="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-100 px-2 py-1 rounded text-xs">像素</span>
-                            </div>
-                            <a href="/games/bit-heroes.html" class="text-funion-primary hover:text-funion-secondary">
-                                查看详情 <i class="fas fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 分页 -->
-            <div class="mt-12 flex justify-center">
-                <nav class="flex space-x-2">
-                    <button class="px-4 py-2 bg-white dark:bg-gray-800 text-funion-primary rounded-lg hover:bg-funion-accent hover:text-white">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="px-4 py-2 bg-funion-primary text-white rounded-lg">1</button>
-                    <button class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-lg hover:bg-funion-accent hover:text-white">2</button>
-                    <button class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-lg hover:bg-funion-accent hover:text-white">3</button>
-                    <button class="px-4 py-2 bg-white dark:bg-gray-800 text-funion-primary rounded-lg hover:bg-funion-accent hover:text-white">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </nav>
-            </div>
-        </section>
+        <h1 class="text-3xl font-bold mb-8" id="searchTitle">搜索结果</h1>
+        
+        <!-- 搜索结果区域 -->
+        <div id="searchResults" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- 搜索结果将通过JavaScript动态添加 -->
+        </div>
+        
+        <!-- 无结果提示 -->
+        <div id="noResults" class="hidden text-center py-12">
+            <i class="fas fa-search text-funion-primary text-6xl opacity-50 mb-4"></i>
+            <h2 class="text-2xl font-bold mb-2">未找到相关游戏</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">请尝试其他搜索词或浏览我们的游戏分类。</p>
+            <a href="/" class="bg-funion-primary text-white px-6 py-3 rounded-lg hover:bg-funion-secondary inline-block">
+                返回首页
+            </a>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-funion-dark text-white py-12 mt-12">
+    <footer class="bg-funion-dark text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
@@ -254,21 +149,81 @@
 
     <script src="/js/main.js"></script>
     <script>
-        // 获取URL参数中的搜索关键词
-        const urlParams = new URLSearchParams(window.location.search);
-        const searchQuery = urlParams.get('q');
-        
-        // 如果有搜索关键词，填充到搜索框
-        if (searchQuery) {
-            document.getElementById('search').value = decodeURIComponent(searchQuery);
-        }
-
-        // 监听筛选器变化
-        document.querySelectorAll('select').forEach(select => {
-            select.addEventListener('change', () => {
-                // 这里可以添加筛选逻辑
-                console.log('Filter changed:', select.value);
-            });
+        // 搜索功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取URL参数
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('q');
+            
+            // 更新搜索框
+            document.getElementById('searchInput').value = searchQuery;
+            
+            // 更新标题
+            document.getElementById('searchTitle').textContent = '搜索结果: ' + searchQuery;
+            
+            // 游戏数据
+            const games = [
+                {
+                    id: 'epic-quest',
+                    title: 'Epic Quest',
+                    description: '展开一场史诗般的冒险，成为传奇英雄。',
+                    category: '冒险',
+                    categoryColor: 'yellow'
+                },
+                {
+                    id: 'bit-heroes',
+                    title: 'Bit Heroes',
+                    description: '像素风格的RPG游戏，打造你的英雄传说。',
+                    category: 'RPG',
+                    categoryColor: 'indigo'
+                },
+                {
+                    id: 'animation-throwdown',
+                    title: 'Animation Throwdown',
+                    description: '与你喜爱的动画角色一起，体验策略卡牌对战。',
+                    category: '策略',
+                    categoryColor: 'purple'
+                }
+            ];
+            
+            // 执行搜索
+            if (searchQuery) {
+                const searchLower = searchQuery.toLowerCase();
+                const results = games.filter(game => 
+                    game.title.toLowerCase().includes(searchLower) || 
+                    game.description.toLowerCase().includes(searchLower) ||
+                    game.category.toLowerCase().includes(searchLower)
+                );
+                
+                // 显示结果
+                const resultsContainer = document.getElementById('searchResults');
+                
+                if (results.length > 0) {
+                    results.forEach(game => {
+                        resultsContainer.innerHTML += `
+                            <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                                <div class="img-placeholder w-full h-48 flex items-center justify-center">
+                                    <i class="fas fa-gamepad text-3xl"></i>
+                                    <span class="ml-2">${game.title}</span>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">${game.title}</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">${game.description}</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="bg-${game.categoryColor}-100 dark:bg-${game.categoryColor}-900 text-${game.categoryColor}-800 dark:text-${game.categoryColor}-100 px-3 py-1 rounded-full text-xs">${game.category}</span>
+                                        <a href="/games/${game.id}.html" class="bg-funion-primary text-white px-4 py-2 rounded-lg hover:bg-funion-secondary transition">
+                                            开始游戏
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                } else {
+                    // 没有找到结果
+                    document.getElementById('noResults').classList.remove('hidden');
+                }
+            }
         });
     </script>
 </body>

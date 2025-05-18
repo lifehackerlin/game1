@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark:bg-funion-dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +26,21 @@
             darkMode: 'class'
         }
     </script>
+    <style>
+        /* 默认图片样式 */
+        .img-placeholder {
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+        .dark .img-placeholder {
+            background-color: #374151;
+            color: #d1d5db;
+        }
+    </style>
 </head>
 <body class="bg-funion-light dark:bg-funion-dark text-gray-800 dark:text-white min-h-screen">
     <!-- Header (与首页相同) -->
@@ -45,7 +60,16 @@
                     </nav>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <button class="p-2 hover:bg-funion-secondary rounded-full">
+                    <form action="/search.html" method="get">
+                        <div class="relative">
+                            <input type="text" name="q" placeholder="搜索游戏..." 
+                                   class="bg-white/10 rounded-full py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-funion-accent">
+                            <button type="submit" class="absolute right-3 top-2.5">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <button id="darkModeToggle" class="p-2 hover:bg-funion-secondary rounded-full">
                         <i class="fas fa-moon"></i>
                     </button>
                 </div>
@@ -104,18 +128,18 @@
                 <div class="mb-8">
                     <h2 class="text-xl font-bold mb-4">游戏截图</h2>
                     <div class="grid grid-cols-2 gap-4">
-                        <a href="/images/screenshots/bit-heroes-1.jpg" class="block">
-                            <img src="/images/screenshots/bit-heroes-1.jpg" alt="Bit Heroes Screenshot 1" class="rounded-lg w-full h-48 object-cover">
-                        </a>
-                        <a href="/images/screenshots/bit-heroes-2.jpg" class="block">
-                            <img src="/images/screenshots/bit-heroes-2.jpg" alt="Bit Heroes Screenshot 2" class="rounded-lg w-full h-48 object-cover">
-                        </a>
-                        <a href="/images/screenshots/bit-heroes-3.jpg" class="block">
-                            <img src="/images/screenshots/bit-heroes-3.jpg" alt="Bit Heroes Screenshot 3" class="rounded-lg w-full h-48 object-cover">
-                        </a>
-                        <a href="/images/screenshots/bit-heroes-4.jpg" class="block">
-                            <img src="/images/screenshots/bit-heroes-4.jpg" alt="Bit Heroes Screenshot 4" class="rounded-lg w-full h-48 object-cover">
-                        </a>
+                        <div class="img-placeholder rounded-lg w-full h-48 flex items-center justify-center">
+                            <span>游戏截图 1</span>
+                        </div>
+                        <div class="img-placeholder rounded-lg w-full h-48 flex items-center justify-center">
+                            <span>游戏截图 2</span>
+                        </div>
+                        <div class="img-placeholder rounded-lg w-full h-48 flex items-center justify-center">
+                            <span>游戏截图 3</span>
+                        </div>
+                        <div class="img-placeholder rounded-lg w-full h-48 flex items-center justify-center">
+                            <span>游戏截图 4</span>
+                        </div>
                     </div>
                 </div>
                 
@@ -184,14 +208,18 @@
                     <h2 class="text-xl font-bold mb-4">相关游戏</h2>
                     <div class="space-y-4">
                         <a href="/games/epic-quest.html" class="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-                            <img src="/images/games/epic-quest-thumb.jpg" alt="Epic Quest" class="w-16 h-16 rounded-lg object-cover">
+                            <div class="img-placeholder w-16 h-16 rounded-lg">
+                                <i class="fas fa-image"></i>
+                            </div>
                             <div class="ml-4">
                                 <h3 class="font-medium">Epic Quest</h3>
                                 <p class="text-sm text-gray-600 dark:text-gray-400">史诗冒险游戏</p>
                             </div>
                         </a>
                         <a href="/games/animation-throwdown.html" class="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-                            <img src="/images/games/animation-throwdown-thumb.jpg" alt="Animation Throwdown" class="w-16 h-16 rounded-lg object-cover">
+                            <div class="img-placeholder w-16 h-16 rounded-lg">
+                                <i class="fas fa-image"></i>
+                            </div>
                             <div class="ml-4">
                                 <h3 class="font-medium">Animation Throwdown</h3>
                                 <p class="text-sm text-gray-600 dark:text-gray-400">策略卡牌游戏</p>
@@ -253,34 +281,6 @@
         </div>
     </footer>
 
-    <script>
-        // 深色模式切换
-        const darkModeToggle = document.querySelector('button i.fa-moon');
-        darkModeToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            darkModeToggle.classList.toggle('fa-moon');
-            darkModeToggle.classList.toggle('fa-sun');
-        });
-
-        // 社交分享功能
-        const shareButton = document.querySelector('button i.fa-share-alt').parentElement;
-        shareButton.addEventListener('click', () => {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Bit Heroes - Funion Games',
-                    text: '来玩这款超棒的复古RPG游戏！',
-                    url: window.location.href
-                });
-            }
-        });
-
-        // 收藏功能
-        const favoriteButton = document.querySelector('button i.fa-heart').parentElement;
-        favoriteButton.addEventListener('click', function() {
-            this.classList.toggle('text-red-500');
-            this.querySelector('i').classList.toggle('fas');
-            this.querySelector('i').classList.toggle('far');
-        });
-    </script>
+    <script src="/js/main.js"></script>
 </body>
 </html> 
