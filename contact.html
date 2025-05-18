@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 | Funion Games</title>
+    <meta name="description" content="联系 Funion Games 团队，分享您的想法和建议。我们期待听到您的声音！" />
+    <meta name="keywords" content="Funion Games, 联系我们, 客户支持, 反馈" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        funion: {
+                            primary: '#6366F1',
+                            secondary: '#4F46E5',
+                            accent: '#818CF8',
+                            dark: '#1E1B4B',
+                            light: '#EEF2FF'
+                        }
+                    }
+                }
+            },
+            darkMode: 'class'
+        }
+    </script>
+</head>
+<body class="bg-funion-light dark:bg-funion-dark text-gray-800 dark:text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-funion-primary text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-8">
+                    <a href="/" class="text-2xl font-bold flex items-center">
+                        <i class="fas fa-gamepad mr-2"></i>
+                        Funion Games
+                    </a>
+                    <nav class="hidden md:flex space-x-6">
+                        <a href="/games/action.html" class="hover:text-funion-accent">Action</a>
+                        <a href="/games/adventure.html" class="hover:text-funion-accent">Adventure</a>
+                        <a href="/games/rpg.html" class="hover:text-funion-accent">RPG</a>
+                        <a href="/games/strategy.html" class="hover:text-funion-accent">Strategy</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <input type="text" placeholder="搜索游戏..." 
+                               class="bg-white/10 rounded-full py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-funion-accent">
+                        <button class="absolute right-3 top-2.5">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <button class="p-2 hover:bg-funion-secondary rounded-full">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- 联系我们标题 -->
+        <section class="text-center mb-16">
+            <h1 class="text-4xl font-bold mb-4">联系我们</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400">我们期待听到您的声音</p>
+        </section>
+
+        <!-- 联系方式和表单 -->
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- 联系方式 -->
+            <div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-6">联系方式</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-funion-primary text-2xl">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold mb-1">电子邮件</h3>
+                                <p class="text-gray-600 dark:text-gray-400">support@funiongames.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="text-funion-primary text-2xl">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold mb-1">客服热线</h3>
+                                <p class="text-gray-600 dark:text-gray-400">400-888-8888</p>
+                                <p class="text-sm text-gray-500">周一至周五 9:00-18:00</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="text-funion-primary text-2xl">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold mb-1">在线客服</h3>
+                                <p class="text-gray-600 dark:text-gray-400">点击右下角对话框</p>
+                                <p class="text-sm text-gray-500">24小时在线服务</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 社交媒体 -->
+                    <div class="mt-8">
+                        <h2 class="text-2xl font-bold mb-4">关注我们</h2>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-funion-primary text-white p-3 rounded-full hover:bg-funion-secondary transition">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="bg-funion-primary text-white p-3 rounded-full hover:bg-funion-secondary transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-funion-primary text-white p-3 rounded-full hover:bg-funion-secondary transition">
+                                <i class="fab fa-reddit"></i>
+                            </a>
+                            <a href="#" class="bg-funion-primary text-white p-3 rounded-full hover:bg-funion-secondary transition">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 联系表单 -->
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-6">发送消息</h2>
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="name">
+                            姓名 <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="name" name="name" required
+                               class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-funion-accent dark:bg-gray-700 dark:border-gray-600">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="email">
+                            电子邮件 <span class="text-red-500">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" required
+                               class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-funion-accent dark:bg-gray-700 dark:border-gray-600">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="subject">
+                            主题 <span class="text-red-500">*</span>
+                        </label>
+                        <select id="subject" name="subject" required
+                                class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-funion-accent dark:bg-gray-700 dark:border-gray-600">
+                            <option value="">请选择主题</option>
+                            <option value="support">技术支持</option>
+                            <option value="feedback">意见反馈</option>
+                            <option value="business">商务合作</option>
+                            <option value="other">其他</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="message">
+                            消息内容 <span class="text-red-500">*</span>
+                        </label>
+                        <textarea id="message" name="message" rows="5" required
+                                  class="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-funion-accent dark:bg-gray-700 dark:border-gray-600"></textarea>
+                    </div>
+                    <button type="submit" 
+                            class="w-full bg-funion-primary text-white py-3 px-6 rounded-lg hover:bg-funion-secondary transition">
+                        发送消息
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- FAQ部分 -->
+        <section class="mt-16">
+            <h2 class="text-3xl font-bold text-center mb-8">常见问题</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-3">如何重置密码？</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        点击登录页面的"忘记密码"链接，输入您的注册邮箱，我们会发送重置密码的链接到您的邮箱。
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-3">游戏无法加载怎么办？</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        请尝试清除浏览器缓存，或使用其他现代浏览器（如Chrome、Firefox）访问。
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-3">如何成为合作伙伴？</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        请通过上方表单选择"商务合作"主题与我们联系，我们会尽快回复您。
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-3">支持哪些支付方式？</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        我们支持支付宝、微信支付、银联卡等主流支付方式。
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-funion-dark text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Funion Games</h3>
+                    <p class="text-gray-400">您的在线游戏娱乐终极目的地。</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white">关于我们</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-white">联系我们</a></li>
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white">隐私政策</a></li>
+                        <li><a href="/terms.html" class="text-gray-400 hover:text-white">服务条款</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">游戏分类</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/games/action.html" class="text-gray-400 hover:text-white">动作游戏</a></li>
+                        <li><a href="/games/adventure.html" class="text-gray-400 hover:text-white">冒险游戏</a></li>
+                        <li><a href="/games/rpg.html" class="text-gray-400 hover:text-white">角色扮演</a></li>
+                        <li><a href="/games/strategy.html" class="text-gray-400 hover:text-white">策略游戏</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">关注我们</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-reddit"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400">&copy; 2024 Funion Games. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html> 

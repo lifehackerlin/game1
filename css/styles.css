@@ -1,0 +1,142 @@
+/* 全局样式 */
+:root {
+    --funion-primary: #6366F1;
+    --funion-secondary: #4F46E5;
+    --funion-accent: #818CF8;
+    --funion-dark: #1E1B4B;
+    --funion-light: #EEF2FF;
+}
+
+/* 暗色模式 */
+.dark {
+    color-scheme: dark;
+}
+
+/* 动画效果 */
+.hover-scale {
+    transition: transform 0.2s ease-in-out;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--funion-light);
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: var(--funion-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--funion-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--funion-secondary);
+}
+
+/* 加载动画 */
+.loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(99, 102, 241, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--funion-primary);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 游戏卡片样式 */
+.game-card {
+    transition: all 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 按钮样式 */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* 响应式布局辅助类 */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* 表单样式 */
+.form-input {
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: var(--funion-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* 图片加载占位符 */
+.img-placeholder {
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s linear infinite;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: -200% 0;
+    }
+}
+
+/* 工具提示 */
+.tooltip {
+    position: relative;
+}
+
+.tooltip:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    background: var(--funion-dark);
+    color: white;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.tooltip:hover:before {
+    opacity: 1;
+    visibility: visible;
+} 

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Quest Adventures | Funion Games</title>
+    <meta name="description" content="Play Epic Quest Adventures - An extraordinary journey through mystical realms and challenging puzzles. Free online at Funion Games!" />
+    <meta name="keywords" content="Epic Quest Adventures, adventure game, puzzle game, online game, free game" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        funion: {
+                            primary: '#6366F1',
+                            secondary: '#4F46E5',
+                            accent: '#818CF8',
+                            dark: '#1E1B4B',
+                            light: '#EEF2FF'
+                        }
+                    }
+                }
+            },
+            darkMode: 'class'
+        }
+    </script>
+</head>
+<body class="bg-funion-light dark:bg-funion-dark text-gray-800 dark:text-white min-h-screen">
+    <!-- Header (与首页相同) -->
+    <header class="bg-funion-primary text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-8">
+                    <a href="/" class="text-2xl font-bold flex items-center">
+                        <i class="fas fa-gamepad mr-2"></i>
+                        Funion Games
+                    </a>
+                    <nav class="hidden md:flex space-x-6">
+                        <a href="/games/action.html" class="hover:text-funion-accent">Action</a>
+                        <a href="/games/adventure.html" class="hover:text-funion-accent">Adventure</a>
+                        <a href="/games/rpg.html" class="hover:text-funion-accent">RPG</a>
+                        <a href="/games/strategy.html" class="hover:text-funion-accent">Strategy</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 hover:bg-funion-secondary rounded-full">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 游戏内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- 游戏区域 -->
+            <div class="lg:col-span-2">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 mb-8">
+                    <h1 class="text-3xl font-bold mb-4">Epic Quest Adventures</h1>
+                    <div class="aspect-w-16 aspect-h-9 mb-4">
+                        <iframe src="https://example.com/epic-quest" class="w-full h-[600px] rounded-lg" allowfullscreen></iframe>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 px-3 py-1 rounded-full text-sm">Adventure</span>
+                            <span class="text-gray-600 dark:text-gray-400"><i class="fas fa-users mr-2"></i>1000+ playing</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <button class="text-gray-600 dark:text-gray-400 hover:text-funion-primary">
+                                <i class="fas fa-share-alt mr-1"></i> Share
+                            </button>
+                            <button class="text-gray-600 dark:text-gray-400 hover:text-red-500">
+                                <i class="fas fa-heart mr-1"></i> Favorite
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 游戏说明 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+                    <h2 class="text-2xl font-bold mb-4">游戏介绍</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        Epic Quest Adventures 是一款充满魔幻色彩的冒险游戏。在这个神秘的世界中，你将扮演一位勇敢的冒险者，探索未知的领域，解开古老的谜题，与强大的敌人战斗。
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">游戏特色</h3>
+                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 mb-4">
+                        <li>精美的画面和流畅的动画效果</li>
+                        <li>丰富的剧情和引人入胜的任务系统</li>
+                        <li>独特的解谜元素</li>
+                        <li>多样化的战斗系统</li>
+                        <li>丰富的收集和成就系统</li>
+                    </ul>
+                    <h3 class="text-xl font-bold mb-2">操作说明</h3>
+                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                        <li>WASD 或方向键控制移动</li>
+                        <li>空格键跳跃</li>
+                        <li>鼠标左键攻击</li>
+                        <li>E 键互动</li>
+                        <li>I 键打开背包</li>
+                    </ul>
+                </div>
+
+                <!-- 游戏攻略 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold mb-4">游戏攻略</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">新手指南</h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                1. 开始游戏后，请务必完成新手教程，这将帮助你了解基本操作和游戏机制。<br>
+                                2. 注意收集路上的资源，它们在后期会很有用。<br>
+                                3. 多与NPC对话，他们会给你重要的任务和提示。
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">进阶技巧</h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                1. 解谜时要仔细观察周围环境的细节。<br>
+                                2. 战斗中要善于利用地形优势。<br>
+                                3. 合理分配资源，优先提升主要技能。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 侧边栏 -->
+            <div class="lg:col-span-1">
+                <!-- 游戏截图 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+                    <h2 class="text-2xl font-bold mb-4">游戏截图</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="/images/epic-quest-1.jpg" alt="游戏截图1" class="rounded-lg">
+                        <img src="/images/epic-quest-2.jpg" alt="游戏截图2" class="rounded-lg">
+                        <img src="/images/epic-quest-3.jpg" alt="游戏截图3" class="rounded-lg">
+                        <img src="/images/epic-quest-4.jpg" alt="游戏截图4" class="rounded-lg">
+                    </div>
+                </div>
+
+                <!-- 相关游戏 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold mb-4">相关游戏</h2>
+                    <div class="space-y-4">
+                        <a href="/games/bit-heroes.html" class="block hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg p-4">
+                            <div class="flex items-center">
+                                <img src="/images/bit-heroes.jpg" alt="Bit Heroes" class="w-20 h-20 rounded-lg">
+                                <div class="ml-4">
+                                    <h3 class="font-bold">Bit Heroes</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">复古风格RPG游戏</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/games/animation-throwdown.html" class="block hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg p-4">
+                            <div class="flex items-center">
+                                <img src="/images/animation-throwdown.jpg" alt="Animation Throwdown" class="w-20 h-20 rounded-lg">
+                                <div class="ml-4">
+                                    <h3 class="font-bold">Animation Throwdown</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">策略卡牌游戏</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (与首页相同) -->
+    <footer class="bg-funion-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Funion Games</h3>
+                    <p class="text-gray-400">您的在线游戏娱乐终极目的地。</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white">关于我们</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-white">联系我们</a></li>
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white">隐私政策</a></li>
+                        <li><a href="/terms.html" class="text-gray-400 hover:text-white">服务条款</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">游戏分类</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/games/action.html" class="text-gray-400 hover:text-white">动作游戏</a></li>
+                        <li><a href="/games/adventure.html" class="text-gray-400 hover:text-white">冒险游戏</a></li>
+                        <li><a href="/games/rpg.html" class="text-gray-400 hover:text-white">角色扮演</a></li>
+                        <li><a href="/games/strategy.html" class="text-gray-400 hover:text-white">策略游戏</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">关注我们</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-reddit"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400">&copy; 2024 Funion Games. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 深色模式切换
+        const darkModeToggle = document.querySelector('button i.fa-moon');
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            darkModeToggle.classList.toggle('fa-moon');
+            darkModeToggle.classList.toggle('fa-sun');
+        });
+
+        // 社交分享功能
+        const shareButton = document.querySelector('button i.fa-share-alt').parentElement;
+        shareButton.addEventListener('click', () => {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Epic Quest Adventures - Funion Games',
+                    text: '来玩这款超棒的冒险游戏！',
+                    url: window.location.href
+                });
+            }
+        });
+
+        // 收藏功能
+        const favoriteButton = document.querySelector('button i.fa-heart').parentElement;
+        favoriteButton.addEventListener('click', function() {
+            this.classList.toggle('text-red-500');
+            this.querySelector('i').classList.toggle('fas');
+            this.querySelector('i').classList.toggle('far');
+        });
+    </script>
+</body>
+</html> 

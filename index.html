@@ -4,54 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="ll9dhZa4pZsyZXWkYGY-TctLr_u1g5TbWarfcMRiMVs" />
-    <title>Epic Quest Adventures | Play Free Online Adventure Game</title>
-    <meta name="description" content="Embark on an epic adventure in this free online game. Solve puzzles, defeat enemies and uncover hidden treasures in Epic Quest Adventures!" />
-    <meta name="keywords" content="online game, adventure game, puzzle game, free game, browser game, epic quest, quest game" />
-    <meta name="author" content="Epic Quest Adventures" />
+    <title>Funion Games | Play Free Online Games</title>
+    <meta name="description" content="Play the best free online games at Funion Games. Action, Adventure, RPG and more browser games. No downloads needed - play directly in your browser!" />
+    <meta name="keywords" content="online games, browser games, free games, action games, adventure games, RPG games, multiplayer games" />
+    <meta name="author" content="Funion Games" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Epic Quest Adventures | Play Free Online Adventure Game" />
-    <meta property="og:description" content="Embark on an epic adventure in this free online game. Solve puzzles, defeat enemies and uncover hidden treasures!" />
+    <meta property="og:title" content="Funion Games | Play Free Online Games" />
+    <meta property="og:description" content="Play the best free online games at Funion Games. No downloads needed!" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://game1-nine-gamma.vercel.app/" />
-    <meta property="og:image" content="https://game1-nine-gamma.vercel.app/game-preview.jpg" />
+    <meta property="og:image" content="https://game1-nine-gamma.vercel.app/images/funion-preview.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Epic Quest Adventures" />
-    <meta name="twitter:description" content="Play the most engaging browser game of the year! Epic Quest Adventures offers challenging puzzles and exciting gameplay." />
+    <meta name="twitter:title" content="Funion Games" />
+    <meta name="twitter:description" content="Your ultimate destination for free online gaming!" />
     <link rel="canonical" href="https://game1-nine-gamma.vercel.app/" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "VideoGame",
-      "name": "Epic Quest Adventures",
-      "description": "An immersive online adventure game that challenges your problem-solving skills and strategic thinking.",
-      "genre": ["Adventure", "Puzzle"],
-      "url": "https://game1-nine-gamma.vercel.app/",
-      "gamePlatform": "Web Browser",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "256"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      }
-    }
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        apple: {
-                            blue: '#007AFF',
-                            gray: '#8E8E93',
-                            green: '#34C759',
-                            darkbg: '#1C1C1E',
-                            lightbg: '#F2F2F7'
+                        funion: {
+                            primary: '#6366F1',
+                            secondary: '#4F46E5',
+                            accent: '#818CF8',
+                            dark: '#1E1B4B',
+                            light: '#EEF2FF'
                         }
                     }
                 }
@@ -59,172 +38,218 @@
         }
     </script>
 </head>
-<body class="bg-apple-lightbg dark:bg-apple-darkbg text-gray-800 dark:text-white">
-    <header class="bg-apple-blue text-white p-4 md:p-6">
-        <div class="container mx-auto">
-            <nav class="flex justify-between items-center">
-                <div class="text-2xl font-bold">Epic Quest Adventures</div>
-                <div class="flex space-x-4">
-                    <a href="#" class="hover:underline">Home</a>
-                    <a href="#about" class="hover:underline">About</a>
-                    <a href="#how-to-play" class="hover:underline">How to Play</a>
+<body class="bg-funion-light dark:bg-funion-dark text-gray-800 dark:text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-funion-primary text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-8">
+                    <a href="/" class="text-2xl font-bold flex items-center">
+                        <i class="fas fa-gamepad mr-2"></i>
+                        Funion Games
+                    </a>
+                    <nav class="hidden md:flex space-x-6">
+                        <a href="/games/action.html" class="hover:text-funion-accent">Action</a>
+                        <a href="/games/adventure.html" class="hover:text-funion-accent">Adventure</a>
+                        <a href="/games/rpg.html" class="hover:text-funion-accent">RPG</a>
+                        <a href="/games/strategy.html" class="hover:text-funion-accent">Strategy</a>
+                    </nav>
                 </div>
-            </nav>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search games..." 
+                               class="bg-white/10 rounded-full py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-funion-accent">
+                        <button class="absolute right-3 top-2.5">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <button class="p-2 hover:bg-funion-secondary rounded-full">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8">
-        <section class="mb-10 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-apple-blue">Epic Quest Adventures</h1>
-            <p class="text-xl md:text-2xl mb-6">Embark on an extraordinary journey through mystical realms and challenging puzzles.</p>
-            
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 mb-8 mx-auto max-w-5xl">
-                <div class="aspect-w-3 aspect-h-2 responsive-iframe-container">
-                    <iframe 
-                        src="https://game287709.konggames.com/gamez/0028/7709/live/index.html?kongregate_game_version=1606746247&kongregate_host=www.kongregate.com" 
-                        class="w-full h-[640px] max-h-[80vh]"
-                        frameborder="0" 
-                        allowfullscreen 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    ></iframe>
-                </div>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-funion-primary to-funion-secondary text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Funion Games</h1>
+            <p class="text-xl md:text-2xl mb-8">Your Ultimate Gaming Destination</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#featured" class="bg-white text-funion-primary px-6 py-3 rounded-full font-bold hover:bg-funion-accent hover:text-white transition">
+                    Play Now
+                </a>
+                <a href="#categories" class="border-2 border-white px-6 py-3 rounded-full font-bold hover:bg-white hover:text-funion-primary transition">
+                    Browse Games
+                </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="about" class="mb-10">
-            <h2 class="text-3xl font-bold mb-4 text-apple-blue">About The Game</h2>
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-                <p class="mb-4">Epic Quest Adventures is an immersive online adventure game that challenges your problem-solving skills and strategic thinking. Set in a fantastical world of magic and mystery, this game offers hours of engaging gameplay for players of all ages.</p>
-                
-                <p class="mb-4">With stunning visuals and an enchanting soundtrack, you'll be transported to a realm where every decision matters and every puzzle solved brings you closer to uncovering the ancient secrets that lie within.</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                    <div class="bg-apple-lightbg dark:bg-gray-700 p-4 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-2 text-apple-green">Key Features</h3>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li>Challenging puzzles that test your intellect</li>
-                            <li>Beautiful, hand-crafted environments</li>
-                            <li>Engaging storyline with memorable characters</li>
-                            <li>Multiple difficulty levels for all players</li>
-                            <li>Regular updates with new content</li>
-                        </ul>
-                    </div>
-                    <div class="bg-apple-lightbg dark:bg-gray-700 p-4 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-2 text-apple-green">Game Stats</h3>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li>Genre: Adventure, Puzzle</li>
-                            <li>Release Date: 2023</li>
-                            <li>Platform: Web Browser</li>
-                            <li>Developer: KongGames Studio</li>
-                            <li>Player Rating: 4.8/5 stars</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="how-to-play" class="mb-10">
-            <h2 class="text-3xl font-bold mb-4 text-apple-blue">How To Play</h2>
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-                <p class="mb-6">Getting started with Epic Quest Adventures is easy! Follow these simple steps to begin your journey:</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-apple-lightbg dark:bg-gray-700 p-4 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-2 text-apple-blue">1. Controls</h3>
-                        <p>Use the arrow keys or WASD to move your character. Space bar to jump, and mouse clicks to interact with objects and solve puzzles.</p>
-                    </div>
-                    <div class="bg-apple-lightbg dark:bg-gray-700 p-4 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-2 text-apple-blue">2. Objectives</h3>
-                        <p>Each level has unique objectives. Pay attention to the quest markers and hints provided in-game to understand what needs to be accomplished.</p>
-                    </div>
-                    <div class="bg-apple-lightbg dark:bg-gray-700 p-4 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-2 text-apple-blue">3. Progression</h3>
-                        <p>As you complete levels, you'll unlock new areas, abilities, and story elements. Save your progress regularly by reaching checkpoints.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="mb-10">
-            <h2 class="text-3xl font-bold mb-4 text-apple-blue">Player Testimonials</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-apple-blue rounded-full flex items-center justify-center text-white font-bold text-xl">J</div>
-                        <div class="ml-4">
-                            <div class="font-semibold">James Wilson</div>
-                            <div class="text-apple-gray text-sm">Adventure Game Enthusiast</div>
+    <!-- Featured Games -->
+    <section id="featured" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">Featured Games</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Epic Quest Adventures -->
+                <div class="bg-white dark:bg-funion-dark rounded-lg shadow-lg overflow-hidden">
+                    <img src="/images/epic-quest.jpg" alt="Epic Quest Adventures" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Epic Quest Adventures</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Embark on an extraordinary journey through mystical realms and challenging puzzles.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Adventure</span>
+                            </div>
+                            <a href="/games/epic-quest.html" class="bg-funion-primary text-white px-4 py-2 rounded-full hover:bg-funion-secondary">Play Now</a>
                         </div>
                     </div>
-                    <p class="italic">"Epic Quest Adventures is by far the most engaging browser game I've played this year. The puzzles are challenging without being frustrating, and the story kept me hooked for hours!"</p>
                 </div>
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-apple-green rounded-full flex items-center justify-center text-white font-bold text-xl">S</div>
-                        <div class="ml-4">
-                            <div class="font-semibold">Sarah Johnson</div>
-                            <div class="text-apple-gray text-sm">Casual Gamer</div>
+
+                <!-- Bit Heroes -->
+                <div class="bg-white dark:bg-funion-dark rounded-lg shadow-lg overflow-hidden">
+                    <img src="/images/bit-heroes.jpg" alt="Bit Heroes" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bit Heroes</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Experience an epic retro-style RPG adventure with modern multiplayer features.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">RPG</span>
+                            </div>
+                            <a href="/games/bit-heroes.html" class="bg-funion-primary text-white px-4 py-2 rounded-full hover:bg-funion-secondary">Play Now</a>
                         </div>
                     </div>
-                    <p class="italic">"I'm not usually into gaming, but Epic Quest Adventures changed that for me. The intuitive controls and beautiful visuals make it accessible and enjoyable even for beginners."</p>
+                </div>
+
+                <!-- Animation Throwdown -->
+                <div class="bg-white dark:bg-funion-dark rounded-lg shadow-lg overflow-hidden">
+                    <img src="/images/animation-throwdown.jpg" alt="Animation Throwdown" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Animation Throwdown</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Battle with your favorite animated characters in this strategic card game.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Strategy</span>
+                            </div>
+                            <a href="/games/animation-throwdown.html" class="bg-funion-primary text-white px-4 py-2 rounded-full hover:bg-funion-secondary">Play Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="bg-gray-800 text-white p-6">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Categories -->
+    <section id="categories" class="py-12 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">Game Categories</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="/games/action.html" class="bg-white dark:bg-funion-dark p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition">
+                    <i class="fas fa-fist-raised text-4xl text-funion-primary mb-4"></i>
+                    <h3 class="font-bold">Action</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Fast-paced excitement</p>
+                </a>
+                <a href="/games/adventure.html" class="bg-white dark:bg-funion-dark p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition">
+                    <i class="fas fa-map-marked-alt text-4xl text-funion-primary mb-4"></i>
+                    <h3 class="font-bold">Adventure</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Epic journeys await</p>
+                </a>
+                <a href="/games/rpg.html" class="bg-white dark:bg-funion-dark p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition">
+                    <i class="fas fa-hat-wizard text-4xl text-funion-primary mb-4"></i>
+                    <h3 class="font-bold">RPG</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Become a hero</p>
+                </a>
+                <a href="/games/strategy.html" class="bg-white dark:bg-funion-dark p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition">
+                    <i class="fas fa-chess text-4xl text-funion-primary mb-4"></i>
+                    <h3 class="font-bold">Strategy</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Plan your victory</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-funion-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+            <p class="mb-8">Subscribe to our newsletter for new game alerts and gaming tips!</p>
+            <form class="max-w-md mx-auto flex gap-4">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-full text-gray-800">
+                <button type="submit" class="bg-white text-funion-primary px-6 py-2 rounded-full font-bold hover:bg-funion-accent hover:text-white">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-funion-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h2 class="text-xl font-bold mb-4">Epic Quest Adventures</h2>
-                    <p>The ultimate online adventure game experience. Embark on an extraordinary journey through mystical realms and challenging puzzles.</p>
+                    <h3 class="text-xl font-bold mb-4">Funion Games</h3>
+                    <p class="text-gray-400">Your ultimate destination for free online gaming entertainment.</p>
                 </div>
                 <div>
-                    <h2 class="text-xl font-bold mb-4">Quick Links</h2>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-apple-blue">Home</a></li>
-                        <li><a href="#about" class="hover:text-apple-blue">About</a></li>
-                        <li><a href="#how-to-play" class="hover:text-apple-blue">How to Play</a></li>
-                        <li><a href="#testimonials" class="hover:text-apple-blue">Testimonials</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="text-gray-400 hover:text-white">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="text-xl font-bold mb-4">Connect With Us</h2>
-                    <p class="mb-2">Stay updated with the latest news and updates about Epic Quest Adventures.</p>
-                    <div class="flex space-x-4 mt-4">
-                        <a href="#" class="text-white hover:text-apple-blue">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg>
+                    <h3 class="text-xl font-bold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/games/action.html" class="text-gray-400 hover:text-white">Action Games</a></li>
+                        <li><a href="/games/adventure.html" class="text-gray-400 hover:text-white">Adventure Games</a></li>
+                        <li><a href="/games/rpg.html" class="text-gray-400 hover:text-white">RPG Games</a></li>
+                        <li><a href="/games/strategy.html" class="text-gray-400 hover:text-white">Strategy Games</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="#" class="text-white hover:text-apple-blue">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path></svg>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="text-white hover:text-apple-blue">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-reddit"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-discord"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="mt-8 pt-6 border-t border-gray-700 text-center">
-                <p>&copy; 2023 Epic Quest Adventures. All rights reserved.</p>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400">&copy; 2024 Funion Games. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <style>
-        @media (max-width: 768px) {
-            iframe {
-                height: 400px;
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.querySelector('button i.fa-moon');
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            darkModeToggle.classList.toggle('fa-moon');
+            darkModeToggle.classList.toggle('fa-sun');
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const searchTerm = searchInput.value.toLowerCase();
+                window.location.href = `/search.html?q=${encodeURIComponent(searchTerm)}`;
             }
-        }
-        @media (max-width: 480px) {
-            iframe {
-                height: 300px;
-            }
-        }
-        .responsive-iframe-container {
-            position: relative;
-            overflow: hidden;
-        }
-    </style>
+        });
+    </script>
 </body>
 </html> 
